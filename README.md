@@ -41,7 +41,7 @@ Studio Focus removes the temptation without removing access to your work. The fe
 | Home feed, watch pages, Shorts, search, other channels | Covered in white, video paused |
 | `music.youtube.com`, `m.youtube.com` | Covered in white |
 
-Need a page for a minute? Press "Unlock for 5 minutes" on the white page, or pause the extension for 15 minutes from the toolbar popup.
+Need a page for a minute? Press "Unlock for 5 minutes" on the white page. Unlocks are counted: you get a limited number per day (3 by default, set it in the popup, 0 means never). The page shows how many are left, and when they run out the button is disabled until tomorrow. Pausing for 15 minutes from the popup spends one unlock too.
 
 ## Install
 
@@ -55,7 +55,7 @@ Works in Chrome, Edge, Brave and other Chromium browsers (Manifest V3).
 
 ## Setup
 
-Click the toolbar icon and add your channels, one per line. Accepted forms: `@handle`, a channel ID (`UC...`) or a youtube.com URL. Channels are optional: Studio and the channel switcher work without them.
+Click the toolbar icon. Set "Unlocks per day" and add your channels, one per line. Accepted forms: `@handle`, a channel ID (`UC...`) or a youtube.com URL. Channels are optional: Studio and the channel switcher work without them.
 
 ## Privacy
 

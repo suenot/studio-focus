@@ -119,7 +119,7 @@
     <text x="640" y="483" text-anchor="middle" font-size="15" font-weight="500" fill="#111">@mychannel</text>
   </g>
   <g class="cyc b3">
-    <text x="640" y="540" text-anchor="middle" font-size="13" fill="#9a9aa0" text-decoration="underline">Unlock for 5 minutes</text>
+    <text x="640" y="540" text-anchor="middle" font-size="13" fill="#9a9aa0" text-decoration="underline">Unlock for 5 minutes (2 left today)</text>
   </g>
 
   <!-- steps -->

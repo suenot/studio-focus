@@ -4,7 +4,11 @@
 (() => {
   const ROOT_ID = "studio-focus-root";
   const ALLOWED_PREFIXES = ["/channel_switcher", "/account", "/signin", "/logout", "/premium_benefits"];
-  const DEFAULTS = { enabled: true, pausedUntil: 0, channels: [] };
+  const UNLOCK_MS = 5 * 60 * 1000;
+  const DEFAULTS = { enabled: true, pausedUntil: 0, channels: [], unlockLimit: 3, unlockLog: { day: "", count: 0 } };
+  const today = () => new Date().toLocaleDateString("sv"); // local YYYY-MM-DD
+  const usedToday = (s) => (s.unlockLog && s.unlockLog.day === today() ? s.unlockLog.count : 0);
+  const unlocksLeft = (s) => Math.max(0, s.unlockLimit - usedToday(s));
 
   let state = { ...DEFAULTS };
   let lastHref = "";
@@ -71,10 +75,23 @@
       a.textContent = label;
       card.append(a);
     }
+    const left = unlocksLeft(state);
     const btn = document.createElement("button");
-    btn.textContent = "Unlock for 5 minutes";
+    btn.textContent = left > 0
+      ? `Unlock for 5 minutes (${left} left today)`
+      : "No unlocks left today";
+    btn.disabled = left === 0;
+    if (left === 0) btn.style.cssText = "cursor:default;text-decoration:none;opacity:.7";
     btn.addEventListener("click", () => {
-      chrome.storage.local.set({ pausedUntil: Date.now() + 5 * 60 * 1000 });
+      // Re-read storage so two tabs cannot spend the same unlock.
+      chrome.storage.local.get(DEFAULTS, (v) => {
+        const cur = { ...DEFAULTS, ...v };
+        if (unlocksLeft(cur) === 0) return;
+        chrome.storage.local.set({
+          pausedUntil: Date.now() + UNLOCK_MS,
+          unlockLog: { day: today(), count: usedToday(cur) + 1 },
+        });
+      });
     });
     card.append(btn);
     wrap.append(card);
