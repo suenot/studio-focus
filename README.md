@@ -1,30 +1,79 @@
-# Studio Focus
+<p align="center">
+  <img src="docs/avatar.png" width="96" alt="Studio Focus logo">
+</p>
 
-Open-source browser extension for YouTube creators. You go to YouTube to check your channel or analytics, then lose an hour to the feed. Studio Focus covers every youtube.com page with a plain white screen, except the ones you need to run your channels.
+<h1 align="center">Studio Focus</h1>
 
-Site: https://studio-focus.suenot.com
+<p align="center">
+  <b>Check your channel. Skip the feed.</b><br>
+  A browser extension for YouTube creators that covers everything on YouTube with a white page, except the places where you run your channels.
+</p>
 
-## What stays visible
+<p align="center">
+  <a href="https://studio-focus.suenot.com">Website</a> ·
+  <a href="#install">Install</a> ·
+  <a href="#how-it-works">How it works</a> ·
+  <a href="LICENSE">MIT</a>
+</p>
 
-- YouTube Studio (`studio.youtube.com`), always.
-- Channel switcher and account pages (`/channel_switcher`, `/account`).
-- Your own channels, which you list in the popup (`@handle`, channel ID or URL).
+<p align="center">
+  <img src="docs/hero.svg" alt="Animated demo: a YouTube feed is covered by a white Focus mode page with shortcuts to YouTube Studio, the channel switcher and your channel" width="100%">
+</p>
 
-Everything else (home feed, watch pages, Shorts, search, other channels) is covered. Videos are paused while covered.
+## Why
 
-The white screen has shortcuts to Studio, the channel switcher and your channels, plus "Unlock for 5 minutes" when you really need a page.
+You open YouTube to look at your analytics or reply to a comment. The home feed shows a video you want to watch. An hour later you are still there.
 
-## Install (from source)
+Studio Focus removes the temptation without removing access to your work. The feed, watch pages, Shorts and search are hidden behind a plain white page. Studio, the channel switcher and your own channels stay one click away.
 
-1. Clone this repo.
-2. Open `chrome://extensions`, enable Developer mode.
-3. "Load unpacked" and pick this folder.
+## How it works
+
+1. You open `youtube.com`.
+2. The extension checks the address. If it is not on the allowed list, a white page covers the tab and any playing video is paused.
+3. The white page offers shortcuts: YouTube Studio, the channel switcher and every channel you listed.
+4. In Studio nothing is covered. You work there as usual.
+
+| Page | What happens |
+| --- | --- |
+| `studio.youtube.com` (Studio, analytics, content, comments) | Always open |
+| `/channel_switcher`, `/account` | Open, so you can switch between your channels |
+| Your channels from the popup (`@handle` or channel ID) | Open |
+| Home feed, watch pages, Shorts, search, other channels | Covered in white, video paused |
+| `music.youtube.com`, `m.youtube.com` | Covered in white |
+
+Need a page for a minute? Press "Unlock for 5 minutes" on the white page, or pause the extension for 15 minutes from the toolbar popup.
+
+## Install
+
+From source, until the store listing is live:
+
+1. Clone this repository.
+2. Open `chrome://extensions` and turn on Developer mode.
+3. Click "Load unpacked" and pick the repository folder.
 
 Works in Chrome, Edge, Brave and other Chromium browsers (Manifest V3).
 
+## Setup
+
+Click the toolbar icon and add your channels, one per line. Accepted forms: `@handle`, a channel ID (`UC...`) or a youtube.com URL. Channels are optional: Studio and the channel switcher work without them.
+
 ## Privacy
 
-No network requests, no analytics. Settings are stored locally with `chrome.storage.local`.
+No network requests, no analytics, no remote code. Settings live in `chrome.storage.local` on your device. The only permission is `storage`.
+
+## Project layout
+
+```
+manifest.json   Manifest V3
+content.js      overlay logic, runs on youtube.com (not on Studio)
+popup.html/js/css   toolbar popup: on/off, pause, your channels
+icons/          extension icons
+docs/           hero.svg (README demo), avatar.svg and avatar.png
+```
+
+## Contributing
+
+Issues and pull requests are welcome. The extension is small on purpose: keep it dependency-free.
 
 ## License
 

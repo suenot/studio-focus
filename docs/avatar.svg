@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Studio Focus">
+  <title>Studio Focus</title>
+  <rect width="512" height="512" fill="#f2f2f4"/>
+  <g fill="#dcdce1">
+    <rect x="68" y="68" width="112" height="112" rx="22"/>
+    <rect x="200" y="68" width="112" height="112" rx="22"/>
+    <rect x="332" y="68" width="112" height="112" rx="22"/>
+    <rect x="68" y="200" width="112" height="112" rx="22"/>
+    <rect x="332" y="200" width="112" height="112" rx="22"/>
+    <rect x="68" y="332" width="112" height="112" rx="22"/>
+    <rect x="200" y="332" width="112" height="112" rx="22"/>
+    <rect x="332" y="332" width="112" height="112" rx="22"/>
+  </g>
+  <rect x="200" y="200" width="112" height="112" rx="22" fill="#111"/>
+  <g fill="#fff">
+    <rect x="222" y="258" width="16" height="30" rx="4"/>
+    <rect x="248" y="238" width="16" height="50" rx="4"/>
+    <rect x="274" y="218" width="16" height="70" rx="4"/>
+  </g>
+</svg>

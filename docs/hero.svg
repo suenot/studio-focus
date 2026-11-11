@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720" role="img" aria-labelledby="t d">
+  <title id="t">Studio Focus: how it works</title>
+  <desc id="d">An animated browser window. A YouTube feed scrolls, then a white Focus mode page covers it with shortcuts to YouTube Studio, the channel switcher and your own channel.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fafafa"/>
+      <stop offset="1" stop-color="#ececef"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#000" flood-opacity="0.16"/>
+    </filter>
+    <clipPath id="view"><rect x="190" y="218" width="900" height="372" rx="0"/></clipPath>
+    <style>
+      text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+      .cyc { animation-duration: 10s; animation-iteration-count: infinite; animation-timing-function: cubic-bezier(.23,.86,.39,.96); }
+      .feed { animation-name: drift; }
+      .cover { animation-name: cover; }
+      .card { animation-name: card; }
+      .b1 { animation-name: b1; }
+      .b2 { animation-name: b2; }
+      .b3 { animation-name: b3; }
+      .s1 { animation-name: s1; }
+      .s2 { animation-name: s2; }
+      .s3 { animation-name: s3; }
+      .pause { animation-name: pause; }
+      @keyframes drift { 0% { transform: translateY(0); } 34%,100% { transform: translateY(-46px); } }
+      @keyframes cover { 0%,34% { opacity: 0; } 42%,90% { opacity: 1; } 97%,100% { opacity: 0; } }
+      @keyframes card { 0%,40% { opacity: 0; transform: translateY(14px); } 48%,90% { opacity: 1; transform: translateY(0); } 96%,100% { opacity: 0; transform: translateY(0); } }
+      @keyframes b1 { 0%,46% { opacity: 0; transform: translateY(10px); } 54%,90% { opacity: 1; transform: translateY(0); } 96%,100% { opacity: 0; } }
+      @keyframes b2 { 0%,50% { opacity: 0; transform: translateY(10px); } 58%,90% { opacity: 1; transform: translateY(0); } 96%,100% { opacity: 0; } }
+      @keyframes b3 { 0%,54% { opacity: 0; transform: translateY(10px); } 62%,90% { opacity: 1; transform: translateY(0); } 96%,100% { opacity: 0; } }
+      @keyframes s1 { 0%,32% { opacity: 1; } 38%,94% { opacity: .3; } 100% { opacity: 1; } }
+      @keyframes s2 { 0%,34% { opacity: .3; } 40%,62% { opacity: 1; } 68%,100% { opacity: .3; } }
+      @keyframes s3 { 0%,62% { opacity: .3; } 70%,92% { opacity: 1; } 98%,100% { opacity: .3; } }
+      @keyframes pause { 0%,36% { opacity: 0; } 42%,90% { opacity: 1; } 97%,100% { opacity: 0; } }
+      @media (prefers-reduced-motion: reduce) { .cyc { animation: none !important; } .cover, .card, .b1, .b2, .b3, .s1, .s2, .s3 { opacity: 1 !important; } }
+    </style>
+  </defs>
+
+  <rect width="1280" height="720" fill="url(#bg)"/>
+
+  <text x="640" y="88" text-anchor="middle" font-size="46" font-weight="700" fill="#111" letter-spacing="-1">Check your channel. Skip the feed.</text>
+  <text x="640" y="130" text-anchor="middle" font-size="21" fill="#6b6b70">A white page covers YouTube. Studio and your channels stay one click away.</text>
+
+  <!-- browser window -->
+  <g filter="url(#shadow)">
+    <rect x="190" y="160" width="900" height="430" rx="16" fill="#fff"/>
+  </g>
+  <path d="M190 176a16 16 0 0 1 16-16h868a16 16 0 0 1 16 16v42H190z" fill="#f1f1f3"/>
+  <circle cx="218" cy="189" r="6" fill="#ff5f57"/>
+  <circle cx="240" cy="189" r="6" fill="#febc2e"/>
+  <circle cx="262" cy="189" r="6" fill="#28c840"/>
+  <rect x="300" y="174" width="520" height="30" rx="15" fill="#fff" stroke="#e2e2e5"/>
+  <text x="560" y="194" text-anchor="middle" font-size="14" fill="#555">youtube.com</text>
+
+  <!-- feed -->
+  <g clip-path="url(#view)">
+    <g class="cyc feed">
+      <g id="row">
+        <g transform="translate(214 238)">
+          <rect width="268" height="150" rx="10" fill="#d9d9de"/>
+          <path d="M120 54l36 21-36 21z" fill="#fff" opacity=".9"/>
+          <rect y="162" width="230" height="12" rx="6" fill="#c4c4ca"/><rect y="184" width="150" height="10" rx="5" fill="#dcdce0"/>
+        </g>
+        <g transform="translate(506 238)">
+          <rect width="268" height="150" rx="10" fill="#cfd3dc"/>
+          <path d="M120 54l36 21-36 21z" fill="#fff" opacity=".9"/>
+          <rect y="162" width="200" height="12" rx="6" fill="#c4c4ca"/><rect y="184" width="120" height="10" rx="5" fill="#dcdce0"/>
+        </g>
+        <g transform="translate(798 238)">
+          <rect width="268" height="150" rx="10" fill="#dad4d4"/>
+          <path d="M120 54l36 21-36 21z" fill="#fff" opacity=".9"/>
+          <rect y="162" width="240" height="12" rx="6" fill="#c4c4ca"/><rect y="184" width="170" height="10" rx="5" fill="#dcdce0"/>
+        </g>
+      </g>
+      <g transform="translate(0 232)">
+        <g transform="translate(214 238)">
+          <rect width="268" height="150" rx="10" fill="#d4dad6"/>
+          <path d="M120 54l36 21-36 21z" fill="#fff" opacity=".9"/>
+          <rect y="162" width="220" height="12" rx="6" fill="#c4c4ca"/><rect y="184" width="140" height="10" rx="5" fill="#dcdce0"/>
+        </g>
+        <g transform="translate(506 238)">
+          <rect width="268" height="150" rx="10" fill="#dcd8cf"/>
+          <path d="M120 54l36 21-36 21z" fill="#fff" opacity=".9"/>
+          <rect y="162" width="190" height="12" rx="6" fill="#c4c4ca"/><rect y="184" width="110" height="10" rx="5" fill="#dcdce0"/>
+        </g>
+        <g transform="translate(798 238)">
+          <rect width="268" height="150" rx="10" fill="#d5d3df"/>
+          <path d="M120 54l36 21-36 21z" fill="#fff" opacity=".9"/>
+          <rect y="162" width="235" height="12" rx="6" fill="#c4c4ca"/><rect y="184" width="160" height="10" rx="5" fill="#dcdce0"/>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- white cover -->
+  <rect class="cyc cover" x="190" y="218" width="900" height="372" fill="#fff"/>
+  <path class="cyc cover" d="M190 590h900v-0a16 16 0 0 1-16 0z" fill="#fff"/>
+
+  <g class="cyc pause">
+    <text x="1070" y="246" text-anchor="end" font-size="13" fill="#9a9aa0">video paused</text>
+  </g>
+
+  <!-- card -->
+  <g class="cyc card">
+    <text x="640" y="300" text-anchor="middle" font-size="28" font-weight="600" fill="#111">Focus mode</text>
+    <text x="640" y="328" text-anchor="middle" font-size="15" fill="#777">Manage your channel, not the feed.</text>
+  </g>
+  <g class="cyc b1">
+    <rect x="500" y="352" width="280" height="42" rx="10" fill="#111"/>
+    <text x="640" y="379" text-anchor="middle" font-size="15" font-weight="600" fill="#fff">Open YouTube Studio</text>
+  </g>
+  <g class="cyc b2">
+    <rect x="500" y="404" width="280" height="42" rx="10" fill="#fff" stroke="#dcdce0"/>
+    <text x="640" y="431" text-anchor="middle" font-size="15" font-weight="500" fill="#111">Switch channel</text>
+  </g>
+  <g class="cyc b3">
+    <rect x="500" y="456" width="280" height="42" rx="10" fill="#fff" stroke="#dcdce0"/>
+    <text x="640" y="483" text-anchor="middle" font-size="15" font-weight="500" fill="#111">@mychannel</text>
+  </g>
+  <g class="cyc b3">
+    <text x="640" y="540" text-anchor="middle" font-size="13" fill="#9a9aa0" text-decoration="underline">Unlock for 5 minutes</text>
+  </g>
+
+  <!-- steps -->
+  <g class="cyc s1">
+    <circle cx="300" cy="650" r="15" fill="#111"/><text x="300" y="656" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">1</text>
+    <text x="326" y="656" font-size="18" font-weight="500" fill="#111">You open YouTube</text>
+  </g>
+  <g class="cyc s2">
+    <circle cx="590" cy="650" r="15" fill="#111"/><text x="590" y="656" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">2</text>
+    <text x="616" y="656" font-size="18" font-weight="500" fill="#111">The feed turns white</text>
+  </g>
+  <g class="cyc s3">
+    <circle cx="880" cy="650" r="15" fill="#111"/><text x="880" y="656" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">3</text>
+    <text x="906" y="656" font-size="18" font-weight="500" fill="#111">Go straight to Studio</text>
+  </g>
+</svg>
