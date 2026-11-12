@@ -68,7 +68,7 @@ manifest.json   Manifest V3
 content.js      overlay logic, runs on youtube.com (not on Studio)
 popup.html/js/css   toolbar popup: on/off, pause, your channels
 icons/          extension icons
-docs/           hero.svg (README demo), avatar.svg and avatar.png
+docs/           hero.svg (README demo), avatar.svg and avatar.png (same as icons/icon.svg)
 ```
 
 ## Contributing
