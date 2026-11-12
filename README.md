@@ -53,6 +53,8 @@ From source, until the store listing is live:
 
 Works in Chrome, Edge, Brave and other Chromium browsers (Manifest V3).
 
+**Firefox (121+):** open `about:debugging#/runtime/this-firefox`, click "Load Temporary Add-on" and pick `manifest.json`. The add-on stays until Firefox restarts; a permanent install needs a signed build from addons.mozilla.org.
+
 ## Setup
 
 Click the toolbar icon. Set "Unlocks per day" and add your channels, one per line. Accepted forms: `@handle`, a channel ID (`UC...`) or a youtube.com URL. Channels are optional: Studio and the channel switcher work without them.
